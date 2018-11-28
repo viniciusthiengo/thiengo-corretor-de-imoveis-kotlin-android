@@ -19,7 +19,7 @@ import mehdi.sakout.aboutpage.Element
 class AboutFragment : Fragment() {
 
     companion object {
-        const val WHATS_APP_NUMBER = "27999887766"
+        const val NUMBER = "27999887766"
         const val YOU_TUBE_URL = "https://youtube.com/user/thiengoCalopsita"
         const val LINKED_IN_ID = "vinícius-thiengo-5179b180"
     }
@@ -95,7 +95,7 @@ class AboutFragment : Fragment() {
             .setOnClickListener {
 
                 val intent = Intent( Intent.ACTION_DIAL )
-                intent.setData( Uri.parse("tel:$WHATS_APP_NUMBER") )
+                intent.setData( Uri.parse("tel:$NUMBER") )
                 startActivity( intent )
             }
 

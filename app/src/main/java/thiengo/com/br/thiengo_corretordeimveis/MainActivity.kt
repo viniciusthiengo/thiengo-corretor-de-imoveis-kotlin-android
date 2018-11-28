@@ -70,7 +70,7 @@ class MainActivity :
      * */
     fun whatsAppHelp(){
         /* O número abaixo é fictício. */
-        val whatsAppUri = Uri.parse( "smsto:${AboutFragment.WHATS_APP_NUMBER}" )
+        val whatsAppUri = Uri.parse( "smsto:${AboutFragment.NUMBER}" )
         val intent = Intent( Intent.ACTION_SENDTO, whatsAppUri )
 
         intent.setPackage( "com.whatsapp" )
