@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Thiengo - Corretor de Imóveis</string>
+
+    <string name="navigation_drawer_open">Abrir menu gaveta</string>
+    <string name="navigation_drawer_close">Fechar menu gaveta</string>
+
+    <string name="whatsapp_needed_info">
+        Instale o WhatsApp em seu aparelho.
+    </string>
+
+    <string name="label_all_properties">Todos os imóveis</string>
+    <string name="label_new_releases">Lançamentos</string>
+    <string name="label_below_market_value">Abaixo do valor de mercado</string>
+    <string name="label_alphaville">Alphaville</string>
+    <string name="label_contact">Contactar corretor agora</string>
+    <string name="label_about">Sobre o corretor</string>
+
+    <string name="about_title">Sobre o corretor</string>
+
+    <string name="about_description">
+        Thiengo é corretor de imóveis a 10 anos atendendo nos mais
+        diferentes tipos de segmentos e classes.
+        \n\n
+
+        Ganhou 14 prêmios de melhor vendedor e de vendedor mais
+        influente no ramo de imóveis em condôminios fechados.
+        \n\n
+
+        Certamente Thiengo tem o melhor imóvel para você e sua
+        família, ou então para as suas metas de investimento de
+        longo prazo.
+    </string>
+
+    <string name="about_contact_group_title">Entre em contato</string>
+    <string name="about_work_group_title">Mais sobre meu trabalho</string>
+    <string name="about_phone_title">Ligar</string>
+    <string name="about_label_email">Meu melhor e-mail</string>
+    <string name="about_label_website">Visite meu Web site</string>
+    <string name="about_label_youtube">Tudo sobre imóveis</string>
+    <string name="about_label_facebook">Super promoções</string>
+    <string name="about_label_twitter">Atualização diária</string>
+    <string name="about_whats_app_title">Lhe respondo agora</string>
+    <string name="about_linked_in_title">Minhas recomendações</string>
+</resources>

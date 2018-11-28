@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#9E9E9E</color>
+    <color name="colorPrimaryDark">#616161</color>
+    <color name="colorAccent">#093F8C</color>
+
+    <color name="colorNavigationView">#F5F5F6</color>
+    <color name="colorItemNormal">#777777</color>
+
+    <color name="colorPhoneLogo">#888888</color>
+    <color name="colorWhatsAppLogo">#2BB201</color>
+    <color name="colorLinkedInLogo">#0077B5</color>
+</resources>
