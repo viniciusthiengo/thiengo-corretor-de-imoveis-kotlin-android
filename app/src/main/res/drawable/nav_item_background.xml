@@ -2,6 +2,12 @@
 <selector
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--
+        A ordem dos itens de um arquivo <selector> deve ser
+        seguida de forma estrita, pois caso contrário os efeitos
+        esperados não ocorrerão.
+    -->
+
     <!-- Estado "Selecionado" -->
     <item
         android:drawable="@color/colorAccent"

@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import mehdi.sakout.aboutpage.AboutPage
 import mehdi.sakout.aboutpage.Element
 
@@ -21,6 +20,7 @@ class AboutFragment : Fragment() {
 
     companion object {
         const val WHATS_APP_NUMBER = "27999887766"
+        const val YOU_TUBE_URL = "https://youtube.com/user/thiengoCalopsita"
         const val LINKED_IN_ID = "vinícius-thiengo-5179b180"
     }
 
@@ -30,8 +30,8 @@ class AboutFragment : Fragment() {
             savedInstanceState: Bundle?
         ): View? {
 
-        val aboutPage = AboutPage(activity)
-            .setImage(R.drawable.thiengo_corretor)
+        val aboutPage = AboutPage( activity )
+            .setImage( R.drawable.thiengo_corretor ) /* 375dp. */
             .setDescription( getString(R.string.about_description) )
             .addItem(
                 getItemGroup( R.string.about_contact_group_title )
@@ -49,10 +49,7 @@ class AboutFragment : Fragment() {
             .addItem(
                 getItemGroup( R.string.about_work_group_title )
             )
-            .addYoutube(
-                "thiengoCalopsita",
-                getString(R.string.about_label_youtube)
-            )
+            .addItem( getItemYouTube() )
             .addFacebook(
                 "thiengoCalopsita",
                 getString(R.string.about_label_facebook)
@@ -96,7 +93,10 @@ class AboutFragment : Fragment() {
             .setGravity( Gravity.START )
             .setIconDrawable( R.drawable.ic_phone_in_talk_black_24dp )
             .setOnClickListener {
-                (activity as MainActivity).whatsAppHelp()
+
+                val intent = Intent( Intent.ACTION_DIAL )
+                intent.setData( Uri.parse("tel:$WHATS_APP_NUMBER") )
+                startActivity( intent )
             }
 
     private fun getItemWhatsApp()
@@ -106,29 +106,35 @@ class AboutFragment : Fragment() {
             .setGravity( Gravity.START )
             .setIconDrawable( R.drawable.ic_whatsapp_black_24dp )
             .setOnClickListener {
-                val intent = Intent(
+
+                (activity as MainActivity).whatsAppHelp()
+            }
+
+    private fun getItemYouTube()
+        = Element()
+            .setTitle( getString(R.string.about_label_youtube) )
+            .setIconTint( R.color.about_youtube_color )
+            .setIconDrawable( R.drawable.about_icon_youtube )
+            .setOnClickListener {
+                var intent = Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse( "smsto:27999887766" )
+                    Uri.parse( YOU_TUBE_URL )
                 )
-                intent.setPackage( "com.whatsapp" )
+                intent.setPackage( "com.google.android.youtube" )
 
                 /*
-                 * Caso o aplicativo no LinkedIn não esteja
-                 * instalado, abre o perfil via navegador
+                 * Caso o aplicativo no YouTube não esteja
+                 * instalado, abre o canal via navegador
                  * mobile.
                  * */
-                if( intent.resolveActivity( activity!!.packageManager ) != null ){
-                    activity!!.startActivity( intent )
+                if( intent.resolveActivity( activity!!.packageManager ) == null ){
+                    intent = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse( YOU_TUBE_URL )
+                    )
                 }
-                else{
-                    Toast
-                        .makeText(
-                            activity,
-                            getString(R.string.whatsapp_needed_info),
-                            Toast.LENGTH_SHORT
-                        )
-                        .show()
-                }
+
+                activity!!.startActivity( intent )
             }
 
     private fun getItemLinkedIn()
@@ -152,13 +158,12 @@ class AboutFragment : Fragment() {
                 if( intent.resolveActivity( activity!!.packageManager ) == null ){
                     intent = Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("http://www.linkedin.com/profile/view?id=$LINKED_IN_ID")
+                        Uri.parse( "http://www.linkedin.com/profile/view?id=$LINKED_IN_ID" )
                     )
                 }
 
                 activity!!.startActivity( intent )
             }
-
 
     /*
      * Método responsável por conter o algoritmo que invoca

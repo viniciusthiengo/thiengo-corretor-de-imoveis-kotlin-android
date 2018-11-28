@@ -6,29 +6,29 @@
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_all_properties"
-                android:icon="@drawable/ic_office_building_black_24dp"
-                android:title="@string/label_all_properties"/>
+            android:id="@+id/nav_all_properties"
+            android:icon="@drawable/ic_office_building_black_24dp"
+            android:title="@string/label_all_properties"/>
         <item
-                android:id="@+id/nav_new_releases"
-                android:icon="@drawable/ic_brightness_7_black_24dp"
-                android:title="@string/label_new_releases"/>
+            android:id="@+id/nav_new_releases"
+            android:icon="@drawable/ic_brightness_7_black_24dp"
+            android:title="@string/label_new_releases"/>
         <item
-                android:id="@+id/nav_below_market_value"
-                android:icon="@drawable/ic_chart_bar_black_24dp"
-                android:title="@string/label_below_market_value"/>
+            android:id="@+id/nav_below_market_value"
+            android:icon="@drawable/ic_chart_bar_black_24dp"
+            android:title="@string/label_below_market_value"/>
         <item
-                android:id="@+id/nav_alphaville"
-                android:icon="@drawable/ic_shield_home_black_24dp"
-                android:title="@string/label_alphaville"/>
+            android:id="@+id/nav_alphaville"
+            android:icon="@drawable/ic_shield_home_black_24dp"
+            android:title="@string/label_alphaville"/>
         <item
-                android:id="@+id/nav_contact"
-                android:icon="@drawable/ic_whatsapp_black_24dp"
-                android:title="@string/label_contact"/>
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_whatsapp_black_24dp"
+            android:title="@string/label_contact"/>
         <item
-                android:id="@+id/nav_about"
-                android:checked="true"
-                android:icon="@drawable/ic_information_black_24dp"
-                android:title="@string/label_about"/>
+            android:id="@+id/nav_about"
+            android:checked="true"
+            android:icon="@drawable/ic_information_black_24dp"
+            android:title="@string/label_about"/>
     </group>
 </menu>

@@ -16,10 +16,10 @@ class MainActivity :
     AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+    override fun onCreate( savedInstanceState: Bundle? ) {
+        super.onCreate( savedInstanceState )
+        setContentView( R.layout.activity_main )
+        setSupportActionBar( toolbar )
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -28,28 +28,24 @@ class MainActivity :
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
-        drawer_layout.addDrawerListener(toggle)
+        drawer_layout.addDrawerListener( toggle )
         toggle.syncState()
 
-        nav_view.setNavigationItemSelectedListener(this)
+        nav_view.setNavigationItemSelectedListener( this )
 
         aboutPage()
     }
 
     override fun onBackPressed() {
-        if( drawer_layout.isDrawerOpen(GravityCompat.START) ){
-            drawer_layout.closeDrawer(GravityCompat.START)
+        if( drawer_layout.isDrawerOpen( GravityCompat.START ) ){
+            drawer_layout.closeDrawer( GravityCompat.START )
         }
         else {
             super.onBackPressed()
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        /*
-         * Para realizar o contato via WhatsApp assim que houver o
-         * acionamento da opção "Contactar corretor".
-         * */
+    override fun onNavigationItemSelected( item: MenuItem ): Boolean {
         when (item.itemId) {
             R.id.nav_contact -> {
                 whatsAppHelp()
@@ -59,8 +55,13 @@ class MainActivity :
             }
         }
 
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return false // Para não mudar o item selecionado em menu gaveta
+        drawer_layout.closeDrawer( GravityCompat.START )
+
+        /*
+         * Para não mudar o item selecionado em menu gaveta. Status
+         * útil para nosso exemplo de única tela.
+         * */
+        return false
     }
 
     /*
@@ -106,7 +107,8 @@ class MainActivity :
 
     /*
      * Método responsável por conter o código de atualização
-     * de título da atividade.
+     * de título da atividade. Seria invocado em todos os
+     * fragmentos relacionados aos itens de menu gaveta.
      * */
     fun updateActivityTitle( title: String ){
         toolbar.title = title
